@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-html-pdf/html-pdf/lib/pdf.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-html-pdf/node_modules/html-pdf/lib/pdf.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-html-pdf">npmtest-html-pdf (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-html-pdf/html-pdf/lib/pdf.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-html-pdf/node_modules/html-pdf/lib/pdf.js</span></h1>
     <h2>
         
         Statements: <span class="metric">14.61% <small>(13 / 89)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-html-pdf/html-pdf/lib/</a> &#187; pdf.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-html-pdf/node_modules/html-pdf/lib/</a> » pdf.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -498,7 +496,7 @@ var assert = require('assert')
 try {
   var phantomjs = require('phantomjs-prebuilt')
 } catch (err) {
-<span class="cstat-no" title="statement not covered" >  console.log('html-pdf: Failed to load PhantomJS module.', err)</span>
+<span class="cstat-no" title="statement not covered">  console.log('html-pdf: Failed to load PhantomJS module.', err)</span>
 }
 &nbsp;
 /*
@@ -515,124 +513,125 @@ try {
 * When no #pageContent is available, phantomjs will use document.body as pdf content
 */
 module.exports = PDF
-<span class="fstat-no" title="function not covered" >function PDF (html, options) {</span>
-<span class="cstat-no" title="statement not covered" >  this.html = html</span>
-<span class="cstat-no" title="statement not covered" >  this.options = options || {}</span>
-<span class="cstat-no" title="statement not covered" >  if (this.options.script) {</span>
-<span class="cstat-no" title="statement not covered" >    this.script = path.normalize(this.options.script)</span>
+<span class="fstat-no" title="function not covered">function PDF (html, options) {</span>
+<span class="cstat-no" title="statement not covered">  this.html = html</span>
+<span class="cstat-no" title="statement not covered">  this.options = options || {}</span>
+<span class="cstat-no" title="statement not covered">  if (this.options.script) {</span>
+<span class="cstat-no" title="statement not covered">    this.script = path.normalize(this.options.script)</span>
   } else {
-<span class="cstat-no" title="statement not covered" >    this.script = path.join(__dirname, 'scripts', 'pdf_a4_portrait.js')</span>
+<span class="cstat-no" title="statement not covered">    this.script = path.join(__dirname, 'scripts', 'pdf_a4_portrait.js')</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (this.options.filename) <span class="cstat-no" title="statement not covered" >this.options.filename = path.resolve(this.options.filename)</span></span>
-<span class="cstat-no" title="statement not covered" >  if (!this.options.phantomPath) <span class="cstat-no" title="statement not covered" >this.options.phantomPath = phantomjs &amp;&amp; phantomjs.path</span></span>
-<span class="cstat-no" title="statement not covered" >  this.options.phantomArgs = this.options.phantomArgs || []</span>
-<span class="cstat-no" title="statement not covered" >  assert(this.options.phantomPath, "html-pdf: Failed to load PhantomJS module. You have to set the path to the PhantomJS binary using 'options.phantomPath'")</span>
-<span class="cstat-no" title="statement not covered" >  assert(typeof this.html === 'string' &amp;&amp; this.html.length, "html-pdf: Can't create a pdf without an html string")</span>
-<span class="cstat-no" title="statement not covered" >  this.options.timeout = parseInt(this.options.timeout) || 30000</span>
+<span class="cstat-no" title="statement not covered">  if (this.options.filename) <span class="cstat-no" title="statement not covered">this.options.filename = path.resolve(this.options.filename)</span></span>
+<span class="cstat-no" title="statement not covered">  if (!this.options.phantomPath) <span class="cstat-no" title="statement not covered">this.options.phantomPath = phantomjs &amp;&amp; phantomjs.path</span></span>
+<span class="cstat-no" title="statement not covered">  this.options.phantomArgs = this.options.phantomArgs || []</span>
+<span class="cstat-no" title="statement not covered">  assert(this.options.phantomPath, "html-pdf: Failed to load PhantomJS module. You have to set the path to the PhantomJS binary using 'options.phantomPath'")</span>
+<span class="cstat-no" title="statement not covered">  assert(typeof this.html === 'string' &amp;&amp; this.html.length, "html-pdf: Can't create a pdf without an html string")</span>
+<span class="cstat-no" title="statement not covered">  this.options.timeout = parseInt(this.options.timeout) || 30000</span>
 }
 &nbsp;
-PDF.prototype.toBuffer = <span class="fstat-no" title="function not covered" >function PdfToBuffer (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  this.exec(<span class="fstat-no" title="function not covered" >function execPdfToBuffer (err, res) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >return callback(err)</span></span>
-<span class="cstat-no" title="statement not covered" >    fs.readFile(res.filename, <span class="fstat-no" title="function not covered" >function readCallback (err, buffer) {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (err) <span class="cstat-no" title="statement not covered" >return callback(err)</span></span>
-<span class="cstat-no" title="statement not covered" >      fs.unlink(res.filename, <span class="fstat-no" title="function not covered" >function unlinkPdfFile (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (err) <span class="cstat-no" title="statement not covered" >return callback(err)</span></span>
-<span class="cstat-no" title="statement not covered" >        callback(null, buffer)</span>
+PDF.prototype.toBuffer = <span class="fstat-no" title="function not covered">function PdfToBuffer (callback) {</span>
+<span class="cstat-no" title="statement not covered">  this.exec(<span class="fstat-no" title="function not covered">function execPdfToBuffer (err, res) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (err) <span class="cstat-no" title="statement not covered">return callback(err)</span></span>
+<span class="cstat-no" title="statement not covered">    fs.readFile(res.filename, <span class="fstat-no" title="function not covered">function readCallback (err, buffer) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (err) <span class="cstat-no" title="statement not covered">return callback(err)</span></span>
+<span class="cstat-no" title="statement not covered">      fs.unlink(res.filename, <span class="fstat-no" title="function not covered">function unlinkPdfFile (err) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (err) <span class="cstat-no" title="statement not covered">return callback(err)</span></span>
+<span class="cstat-no" title="statement not covered">        callback(null, buffer)</span>
       })
     })
   })
 }
 &nbsp;
-PDF.prototype.toStream = <span class="fstat-no" title="function not covered" >function PdfToStream (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  this.exec(<span class="fstat-no" title="function not covered" >function (err, res) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >return callback(err)</span></span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var stream = fs.createReadStream(res.filename)</span>
+PDF.prototype.toStream = <span class="fstat-no" title="function not covered">function PdfToStream (callback) {</span>
+<span class="cstat-no" title="statement not covered">  this.exec(<span class="fstat-no" title="function not covered">function (err, res) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (err) <span class="cstat-no" title="statement not covered">return callback(err)</span></span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var stream = fs.createReadStream(res.filename)</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      return callback(err)</span>
+<span class="cstat-no" title="statement not covered">      return callback(err)</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    stream.on('end', <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >      fs.unlink(res.filename, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (err) <span class="cstat-no" title="statement not covered" >console.log('html-pdf:', err)</span></span>
+<span class="cstat-no" title="statement not covered">    stream.on('end', <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">      fs.unlink(res.filename, <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (err) <span class="cstat-no" title="statement not covered">console.log('html-pdf:', err)</span></span>
       })
     })
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    callback(null, stream)</span>
+<span class="cstat-no" title="statement not covered">    callback(null, stream)</span>
   })
 }
 &nbsp;
-PDF.prototype.toFile = <span class="fstat-no" title="function not covered" >function PdfToFile (filename, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  assert(arguments.length &gt; 0, 'html-pdf: The method .toFile([filename, ]callback) requires a callback.')</span>
-<span class="cstat-no" title="statement not covered" >  if (filename instanceof Function) {</span>
-<span class="cstat-no" title="statement not covered" >    callback = filename</span>
-<span class="cstat-no" title="statement not covered" >    filename = undefined</span>
+PDF.prototype.toFile = <span class="fstat-no" title="function not covered">function PdfToFile (filename, callback) {</span>
+<span class="cstat-no" title="statement not covered">  assert(arguments.length &gt; 0, 'html-pdf: The method .toFile([filename, ]callback) requires a callback.')</span>
+<span class="cstat-no" title="statement not covered">  if (filename instanceof Function) {</span>
+<span class="cstat-no" title="statement not covered">    callback = filename</span>
+<span class="cstat-no" title="statement not covered">    filename = undefined</span>
   } else {
-<span class="cstat-no" title="statement not covered" >    this.options.filename = path.resolve(filename)</span>
+<span class="cstat-no" title="statement not covered">    this.options.filename = path.resolve(filename)</span>
   }
-<span class="cstat-no" title="statement not covered" >  this.exec(callback)</span>
+<span class="cstat-no" title="statement not covered">  this.exec(callback)</span>
 }
 &nbsp;
-PDF.prototype.exec = <span class="fstat-no" title="function not covered" >function PdfExec (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var callbacked = false</span>
-<span class="cstat-no" title="statement not covered" >  var child = childprocess.spawn(this.options.phantomPath, [].concat(this.options.phantomArgs, [this.script]))</span>
-<span class="cstat-no" title="statement not covered" >  var stdout = []</span>
-<span class="cstat-no" title="statement not covered" >  var stderr = []</span>
-<span class="cstat-no" title="statement not covered" >  var timeout = setTimeout(<span class="fstat-no" title="function not covered" >function execTimeout () {</span></span>
-<span class="cstat-no" title="statement not covered" >    child.stdin.end()</span>
-<span class="cstat-no" title="statement not covered" >    child.kill()</span>
-<span class="cstat-no" title="statement not covered" >    if (!stderr.length) {</span>
-<span class="cstat-no" title="statement not covered" >      stderr = [new Buffer('html-pdf: PDF generation timeout. Phantom.js script did not exit.')]</span>
+PDF.prototype.exec = <span class="fstat-no" title="function not covered">function PdfExec (callback) {</span>
+<span class="cstat-no" title="statement not covered">  var callbacked = false</span>
+<span class="cstat-no" title="statement not covered">  var child = childprocess.spawn(this.options.phantomPath, [].concat(this.options.phantomArgs, [this.script]))</span>
+<span class="cstat-no" title="statement not covered">  var stdout = []</span>
+<span class="cstat-no" title="statement not covered">  var stderr = []</span>
+<span class="cstat-no" title="statement not covered">  var timeout = setTimeout(<span class="fstat-no" title="function not covered">function execTimeout () {</span></span>
+<span class="cstat-no" title="statement not covered">    child.stdin.end()</span>
+<span class="cstat-no" title="statement not covered">    child.kill()</span>
+<span class="cstat-no" title="statement not covered">    if (!stderr.length) {</span>
+<span class="cstat-no" title="statement not covered">      stderr = [new Buffer('html-pdf: PDF generation timeout. Phantom.js script did not exit.')]</span>
     }
   }, this.options.timeout)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  child.stdout.on('data', <span class="fstat-no" title="function not covered" >function (buffer) {</span></span>
-<span class="cstat-no" title="statement not covered" >    return stdout.push(buffer)</span>
+<span class="cstat-no" title="statement not covered">  child.stdout.on('data', <span class="fstat-no" title="function not covered">function (buffer) {</span></span>
+<span class="cstat-no" title="statement not covered">    return stdout.push(buffer)</span>
   })
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  child.stderr.on('data', <span class="fstat-no" title="function not covered" >function (buffer) {</span></span>
-<span class="cstat-no" title="statement not covered" >    stderr.push(buffer)</span>
-<span class="cstat-no" title="statement not covered" >    child.stdin.end()</span>
-<span class="cstat-no" title="statement not covered" >    return child.kill()</span>
+<span class="cstat-no" title="statement not covered">  child.stderr.on('data', <span class="fstat-no" title="function not covered">function (buffer) {</span></span>
+<span class="cstat-no" title="statement not covered">    stderr.push(buffer)</span>
+<span class="cstat-no" title="statement not covered">    child.stdin.end()</span>
+<span class="cstat-no" title="statement not covered">    return child.kill()</span>
   })
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function exit (err, data) {</span>
-<span class="cstat-no" title="statement not covered" >    if (callbacked) <span class="cstat-no" title="statement not covered" >return</span></span>
-<span class="cstat-no" title="statement not covered" >    callbacked = true</span>
-<span class="cstat-no" title="statement not covered" >    clearTimeout(timeout)</span>
-<span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >return callback(err)</span></span>
-<span class="cstat-no" title="statement not covered" >    return callback(null, data)</span>
+<span class="fstat-no" title="function not covered">  function exit (err, data) {</span>
+<span class="cstat-no" title="statement not covered">    if (callbacked) <span class="cstat-no" title="statement not covered">return</span></span>
+<span class="cstat-no" title="statement not covered">    callbacked = true</span>
+<span class="cstat-no" title="statement not covered">    clearTimeout(timeout)</span>
+<span class="cstat-no" title="statement not covered">    if (err) <span class="cstat-no" title="statement not covered">return callback(err)</span></span>
+<span class="cstat-no" title="statement not covered">    return callback(null, data)</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  child.on('error', exit)</span>
+<span class="cstat-no" title="statement not covered">  child.on('error', exit)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  child.on('exit', <span class="fstat-no" title="function not covered" >function (code) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (code || stderr.length) {</span>
-<span class="cstat-no" title="statement not covered" >      var err = new Error(Buffer.concat(stderr).toString() || 'html-pdf: Unknown Error')</span>
-<span class="cstat-no" title="statement not covered" >      return exit(err)</span>
+<span class="cstat-no" title="statement not covered">  child.on('exit', <span class="fstat-no" title="function not covered">function (code) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (code || stderr.length) {</span>
+<span class="cstat-no" title="statement not covered">      var err = new Error(Buffer.concat(stderr).toString() || 'html-pdf: Unknown Error')</span>
+<span class="cstat-no" title="statement not covered">      return exit(err)</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        var buff = Buffer.concat(stdout).toString()</span>
-<span class="cstat-no" title="statement not covered" >        var data = (buff) != null ? buff.trim() : undefined</span>
-<span class="cstat-no" title="statement not covered" >        data = JSON.parse(data)</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        var buff = Buffer.concat(stdout).toString()</span>
+<span class="cstat-no" title="statement not covered">        var data = (buff) != null ? buff.trim() : undefined</span>
+<span class="cstat-no" title="statement not covered">        data = JSON.parse(data)</span>
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        return exit(err)</span>
+<span class="cstat-no" title="statement not covered">        return exit(err)</span>
       }
-<span class="cstat-no" title="statement not covered" >      return exit(null, data)</span>
+<span class="cstat-no" title="statement not covered">      return exit(null, data)</span>
     }
   })
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var res = JSON.stringify({html: this.html, options: this.options})</span>
-<span class="cstat-no" title="statement not covered" >  return child.stdin.write(res + '\n', 'utf8')</span>
+<span class="cstat-no" title="statement not covered">  var res = JSON.stringify({html: this.html, options: this.options})</span>
+<span class="cstat-no" title="statement not covered">  return child.stdin.write(res + '\n', 'utf8')</span>
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 08:41:32 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 12:04:45 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
