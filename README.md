@@ -1,4 +1,7 @@
-# test coverage for  [html-pdf (v2.1.0)](https://github.com/marcbachmann/node-html-pdf)  [![npm package](https://img.shields.io/npm/v/npmtest-html-pdf.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-html-pdf) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-html-pdf.svg)](https://travis-ci.org/npmtest/node-npmtest-html-pdf)
+# npmtest-html-pdf
+
+#### basic test coverage for  [html-pdf (v2.1.0)](https://github.com/marcbachmann/node-html-pdf)  [![npm package](https://img.shields.io/npm/v/npmtest-html-pdf.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-html-pdf) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-html-pdf.svg)](https://travis-ci.org/npmtest/node-npmtest-html-pdf)
+
 #### HTML to PDF converter that uses phantomjs
 
 [![NPM](https://nodei.co/npm/html-pdf.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/html-pdf)
